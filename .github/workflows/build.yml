@@ -1,4 +1,4 @@
-name: build executable
+name: "build executable"
 
 on:
   workflow_dispatch:
