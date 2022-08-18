@@ -1,0 +1,36 @@
+name: build executable
+
+on:
+  workflow_dispatch:
+  schedule:
+    - "45 23 * * *"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+
+      - name: cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.cargo/bin
+            ~/.cargo/registry/index/
+            ~/.cargo/registry/cache/
+            ~/.cargo/git/db/
+            target/
+          key: ${{ hashFiles("**/Cargo.lock") }}
+
+      - name: build
+        uses: actions-rs/cargo@v1
+        with:
+          command: build
+          args: --workspace --release --all-features

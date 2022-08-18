@@ -1,0 +1,31 @@
+name: execute during 2022 summer vacation
+
+on:
+  workflow_dispatch:
+  schedule:
+    - "0 0 * * *"
+
+jobs:
+  execute:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: load executable
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.cargo/bin
+            ~/.cargo/registry/index/
+            ~/.cargo/registry/cache/
+            ~/.cargo/git/db/
+            target/
+          key: ${{ hashFiles("**/Cargo.lock") }}
+
+      - name: execute
+        env:
+          SECRET_TOKEN: ${{ secrets.SECRET_TOKEN }}
+          SECRET_URL: ${{ secrets.SECRET_URL }}
+        run: target/release/tmnt
