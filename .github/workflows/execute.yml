@@ -1,4 +1,4 @@
-name: execute during 2022 summer vacation
+name: execute
 
 on:
   workflow_dispatch:
