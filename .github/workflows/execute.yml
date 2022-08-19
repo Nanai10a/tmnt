@@ -22,7 +22,7 @@ jobs:
             ~/.cargo/registry/cache/
             ~/.cargo/git/db/
             target/
-          key: ${{ hashFiles("**/Cargo.lock") }}
+          key: ${{ hashFiles('**/Cargo.lock') }}
 
       - name: execute
         env:

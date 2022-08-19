@@ -27,7 +27,7 @@ jobs:
             ~/.cargo/registry/cache/
             ~/.cargo/git/db/
             target/
-          key: ${{ hashFiles("**/Cargo.lock") }}
+          key: ${{ hashFiles('**/Cargo.lock') }}
 
       - name: build
         uses: actions-rs/cargo@v1
