@@ -2,8 +2,6 @@
 
 **t**er**m**i**n**a**t**e your heart, hold your breath.
 
----
-
 ## about
 
 This repository is automated by GitHub Actions. All processes shouldn't be work by yourself.\
@@ -18,7 +16,7 @@ Processes are automated on **11:45** (JST) of build process, and **12:00** (JST)
 
 ## development / manually execute
 
-This project has cargo project, so you like used to:
+this project has cargo project, so always like you used to:
 
 ```sh
 git clone https://github.com/Nanai10a/tmnt.git
