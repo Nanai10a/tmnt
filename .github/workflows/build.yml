@@ -3,7 +3,7 @@ name: "build executable"
 on:
   workflow_dispatch:
   schedule:
-    - cron: "45 23 * * *"
+    - cron: "45 14 * * *"
 
 jobs:
   build:
