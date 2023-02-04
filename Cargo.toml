@@ -9,4 +9,4 @@ panic = "abort"
 [dependencies]
 chrono = "0.4.22"
 serenity = { version = "0.11.5", features = ["http", "model", "rustls_backend"] }
-tokio = { version = "1.20.1", features = ["rt", "macros", "time"] }
+tokio = { version = "1.20.4", features = ["rt", "macros", "time"] }
